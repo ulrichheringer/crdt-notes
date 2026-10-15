@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="CrdtNotes.Browser/CrdtNotes.Browser.csproj" />
+  <Project Path="CrdtNotes.Desktop/CrdtNotes.Desktop.csproj" />
+  <Project Path="CrdtNotes/CrdtNotes.csproj" />
+</Solution>

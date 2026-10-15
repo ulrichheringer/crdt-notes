@@ -1,0 +1,8 @@
+<UserControl xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:vm="using:CrdtNotes.ViewModels" mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="700" x:Class="CrdtNotes.Views.MainView" x:DataType="vm:MainViewModel">
+  <ScrollViewer><StackPanel Margin="28" Spacing="16" MaxWidth="860" HorizontalAlignment="Center">
+    <TextBlock Text="CRDT Notes" FontSize="30" FontWeight="Bold"/><TextBlock Text="Edite a mesma nota em duas réplicas e veja a convergência após a sincronização." Opacity="0.75"/>
+    <Grid ColumnDefinitions="*,*" ColumnSpacing="14"><StackPanel Grid.Column="0" Spacing="8"><TextBlock Text="Réplica Ana" FontWeight="SemiBold"/><TextBox Text="{Binding AnaDraft}" AcceptsReturn="True" MinHeight="140" TextWrapping="Wrap"/></StackPanel><StackPanel Grid.Column="1" Spacing="8"><TextBlock Text="Réplica Bruno" FontWeight="SemiBold"/><TextBox Text="{Binding BrunoDraft}" AcceptsReturn="True" MinHeight="140" TextWrapping="Wrap"/></StackPanel></Grid>
+    <StackPanel Orientation="Horizontal" Spacing="10"><Button Content="Editar em paralelo e sincronizar" Command="{Binding SyncConcurrentEditsCommand}"/><Button Content="Reiniciar" Command="{Binding ResetCommand}"/></StackPanel>
+    <TextBlock Text="Nota convergida" FontSize="18" FontWeight="SemiBold"/><Border Padding="16" CornerRadius="8" Background="#DCFCE7"><TextBlock Text="{Binding Resolved}" TextWrapping="Wrap"/></Border><TextBlock Text="{Binding SyncStatus}" TextWrapping="Wrap"/>
+  </StackPanel></ScrollViewer>
+</UserControl>
