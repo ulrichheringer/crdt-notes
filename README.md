@@ -1,21 +1,23 @@
 # crdt-notes
 
-Demonstra edição concorrente e convergência de uma nota com LWW-register.
+A two-replica note editor for exploring concurrent edits and conflict resolution. Synchronization uses a last-write-wins register with logical clocks and replica IDs.
 
-## Desktop
+## Run
 
-```sh
+Requires the .NET 10 SDK. Browser builds also need the WebAssembly workload: `dotnet workload install wasm-tools`.
+
+### Desktop
+
+~~~sh
 dotnet run --project CrdtNotes.Desktop/CrdtNotes.Desktop.csproj
-```
+~~~
 
-## Browser
+### Browser
 
-Requer o workload wasm-tools do .NET 10.
-
-```sh
+~~~sh
 dotnet run --project CrdtNotes.Browser/CrdtNotes.Browser.csproj
-```
+~~~
 
-## Exemplo
+## Example
 
-Edite as duas réplicas e sincronize para aplicar o desempate por relógio lógico e réplica.
+Edit both replicas before syncing to see how concurrent changes converge.
